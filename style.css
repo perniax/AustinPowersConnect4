@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+    background-color: tomato;
+}
+
+.container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    justify-content: center;
+    align-content: center;
+}
+
+.player1Box {
+    background-image: url(hippie.png);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.player2Box {
+    background-image: url(hippie.png);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.pic1 {
+    height: 200px;
+    width: 150px;
+    background: url(austin_powers.png);
+    display: grid;
+    justify-content: center;
+    align-items: flex-end;
+    border: 5px solid purple;
+}
+
+.pic2 {
+    height: 200px;
+    width: 150px;
+    background: url(drevil.png);
+    display: grid;
+    justify-content: center;
+    align-items: flex-end;
+    border: 5px solid purple;
+}
+
+.board {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    border: 10px solid #ffd133;
+}
+
+.slot {
+    width: 100px;
+    height: 100px;
+    background-image: url(psico.jpg);
+}
+
+.hole {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+
+    position: relative;
+    left: 10px;
+    top: 10px;
+    border: 5px solid #fc6502;
+}
+
+.player1 .hole {
+    background-image: url(greenFlower.png);
+}
+
+.player2 .hole {
+    background-image: url(blueFlower.png);
+}
+
+.win {
+    display: flex;
+    position: fixed;
+    z-index: 10000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(flowers.jpg);
+    height: 250px;
+    width: 900px;
+    padding: 20px;
+    font-size: 60px;
+    font-family: "Mystery Quest", cursive;
+    font-weight: bolder;
+    z-index: 1000;
+    /* visibility: hidden; */
+    display: none;
+    color: #fc02cb;
+}
+
+p {
+    background: transparent;
+}
+
+.blur {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    /* visibility: hidden; */
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.name {
+    font-family: "Mystery Quest", cursive;
+    width: 150px;
+    background-color: orange;
+    font-weight: bold;
+}
+
+button {
+    background: purple;
+    font-weight: bold;
+    font-family: "Mystery Quest", cursive;
+    position: absolute;
+    height: 70px;
+    width: 200px;
+    color: orange;
+    font-size: 35px;
+    position: relative;
+    animation: mymove 8s infinite;
+}
+.on,
+.hole {
+    width: 100px;
+    height: 100px;
+    background-color: teal;
+    animation: rotation 3.5s infinite linear;
+}
+
+@keyframes mymove {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 500px;
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
